@@ -55,7 +55,7 @@ const UserProfile = () => {
 
         const editProfile = async () => {
             try {
-                const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/edit-profile`, {
+                const response = await axios.post(`api/v1/users/edit-profile`, {
                     name: name,
                     email: email,
                     currentPassword: currentPassword,
