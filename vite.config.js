@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
     server: {
         proxy: {
-            '/api' : 'https://blogify-api.onrender.com'
+            '/api' : 'https://blogify-api-p7qp.onrender.com'
         }
     },
   plugins: [react()],
