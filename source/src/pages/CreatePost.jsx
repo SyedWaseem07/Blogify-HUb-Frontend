@@ -46,7 +46,7 @@ const CreatePost = () => {
         postData.set("description", description)
         postData.set("thumbnail", thumbnail)
 
-        axios.post(`${process.env.BACKEND_URL}/api/v1/posts/`, postData)
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/`, postData)
             .then(res => {
                 if (res.data.statusCode === 201) return navigate("/")
             })

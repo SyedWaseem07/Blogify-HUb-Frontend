@@ -12,7 +12,7 @@ const AuthorPosts = () => {
     useEffect(() => {
         const fetchPosts = () => {
             setIsLoading(true)
-            axios.get(`${process.env.BACKEND_URL}/api/v1/posts/users/${id}`)
+            axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/users/${id}`)
                 .then(res => {
                     setIsLoading(false);
                     setAllPosts(res?.data.data);

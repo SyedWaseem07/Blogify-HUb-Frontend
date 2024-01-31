@@ -12,7 +12,7 @@ const CategoryPost = () => {
     useEffect(() => {
         const fetchPosts = () => {
             setIsLoading(true)
-            axios.get(`${process.env.BACKEND_URL}/api/v1/posts/categories/${category}`)
+            axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/categories/${category}`)
                 .then(res => {
                     setIsLoading(false);
                     setAllPosts(res?.data.data);

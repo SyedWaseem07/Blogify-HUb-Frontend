@@ -40,7 +40,7 @@ const EditPost = () => {
 
 
 
-        axios.get(`${process.env.BACKEND_URL}/api/v1/posts/${id}`)
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/${id}`)
             .then(res => {
                 setTitle(res.data.data.title);
                 setCategory(res.data.data.category);
@@ -59,7 +59,7 @@ const EditPost = () => {
         postData.set("description", description)
         postData.set("thumbnail", thumbnail)
 
-        axios.patch(`${process.env.BACKEND_URL}/api/v1/posts/${id}`, postData)
+        axios.patch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/${id}`, postData)
             .then(res => {
                 if (res.data.statusCode === 200) return navigate("/");
             })
