@@ -22,7 +22,7 @@ const Register = () => {
         e.preventDefault();
         setError("");
 
-        axios.post(`/api/v1/users/register`, userData)
+        axios.post(`${process.env.BACKEND_URL}/api/v1/users/register`, userData)
             .then(response => {
                 const newUser = response?.data
                 if (!newUser) setError("Unable to register user")

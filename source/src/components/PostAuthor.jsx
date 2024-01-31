@@ -9,7 +9,7 @@ const PostAuthor = ({ creator, createdAt }) => {
     const timeago = moment(createdAt).fromNow();
     useEffect(() => {
         if (creator) {
-            axios.get(`/api/v1/users/${creator}`)
+            axios.get(`${process.env.BACKEND_URL}/api/v1/users/${creator}`)
                 .then(res => {
                     setAuthor(res.data.data);
                 })

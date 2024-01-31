@@ -19,7 +19,7 @@ const DeletePost = ({ postId }) => {
 
     const deletePostHandler = (postId) => {
         setIsLoading(true);
-        axios.delete(`/api/v1/posts/${postId}`)
+        axios.delete(`${process.env.BACKEND_URL}/api/v1/posts/${postId}`)
             .then(res => {
                 if (res.data.statusCode === 200) {
                     if (location.pathname === `/dashboard/${currentUser?._id}`) navigate(0)

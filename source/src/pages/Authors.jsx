@@ -11,7 +11,7 @@ const Authors = () => {
     useEffect(() => {
         setIsLoading(true);
         const getAuthors = () => {
-            axios.get(`/api/v1/users`)
+            axios.get(`${process.env.BACKEND_URL}/api/v1/users`)
                 .then(res => {
                     setIsLoading(false);
                     setAuthors(res.data.data);

@@ -22,7 +22,7 @@ const UserProfile = () => {
         const token = currentUser?.refreshToken;
         if (!token) navigate("/login");
 
-        axios.get(`/api/v1/users/${id}`)
+        axios.get(`${process.env.BACKEND_URL}/api/v1/users/${id}`)
             .then(res => {
                 setAvatar(res.data.data.avatar);
                 setName(res.data.data.name);
@@ -37,7 +37,7 @@ const UserProfile = () => {
         const profileData = new FormData();
         profileData.set("avatar", avatar)
 
-        axios.post(`/api/v1/users/change-avatar`, profileData)
+        axios.post(`${process.env.BACKEND_URL}/api/v1/users/change-avatar`, profileData)
             .then(res => {
                 setAvatar(res.data.data.avatar);
             })
@@ -55,7 +55,7 @@ const UserProfile = () => {
 
         const editProfile = async () => {
             try {
-                const response = await axios.post(`/api/v1/users/edit-profile`, {
+                const response = await axios.post(`${process.env.BACKEND_URL}/api/v1/users/edit-profile`, {
                     name: name,
                     email: email,
                     currentPassword: currentPassword,

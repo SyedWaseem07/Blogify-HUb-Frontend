@@ -11,7 +11,7 @@ const Posts = () => {
     useEffect(() => {
         const fetchPosts =  () => {
             setIsLoading(true)
-            axios.get(`/api/v1/posts/`)
+            axios.get(`${process.env.BACKEND_URL}/api/v1/posts/`)
             .then(res => {
                 setIsLoading(false);
                 setAllPosts(res?.data.data);

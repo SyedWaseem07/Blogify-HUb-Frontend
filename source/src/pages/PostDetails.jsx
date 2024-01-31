@@ -16,7 +16,7 @@ const PostDetails = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        axios.get(`/api/v1/posts/${id}`)
+        axios.get(`${process.env.BACKEND_URL}/api/v1/posts/${id}`)
         .then(res => {
             setIsLoading(false);
             setPost(res.data.data);

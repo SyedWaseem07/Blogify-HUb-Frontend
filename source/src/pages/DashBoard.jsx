@@ -16,7 +16,7 @@ const DashBoard = () => {
         if (!token) navigate("/login");
 
         setIsLoading(true);
-        axios.get(`/api/v1/posts/users/${id}`)
+        axios.get(`/${process.env.BACKEND_URL}api/v1/posts/users/${id}`)
             .then(res => {
                 setIsLoading(false);
                 setPosts(res.data.data);

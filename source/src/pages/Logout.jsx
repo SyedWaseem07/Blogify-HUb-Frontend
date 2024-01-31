@@ -9,7 +9,7 @@ const Logout = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.post(`/api/v1/users/logout`)
+        axios.post(`${process.env.BACKEND_URL}/api/v1/users/logout`)
             .then(res => { })
             .catch(err => { });
 

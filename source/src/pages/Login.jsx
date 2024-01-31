@@ -15,7 +15,7 @@ const Login = () => {
     const loginUser = async (e) => {
         e.preventDefault();
         setError("");
-        axios.post(`/api/v1/users/login`, userData)
+        axios.post(`${process.env.BACKEND_URL}/api/v1/users/login`, userData)
             .then(res => {
                 const loggedInUser = res.data.data;
                 if (!loggedInUser) setError("Unable to register user")
